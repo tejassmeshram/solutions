@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tejas-deployment
+  labels:
+    app: tejas-app
+    tier: data-processing
+spec:
+  replicas: 2
+  selector:
+      matchLabels:
+        app: tejas-app
+        tier: data-processing
+  template:
+    metadata:
+      labels:
+        app: tejas-app
+        tier: data-processing
+    spec:
+      containers:
+      - name: tejas-container
+        image: tejassmeshram/some-cool-app:latest
+        ports:
+        - containerPort: 8098

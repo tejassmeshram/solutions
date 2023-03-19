@@ -1,0 +1,2 @@
+It is assumed that there exists a container application that takes the input from the front-end & logs the data into the database managed by Cloud SQL.
+This folder contains the Kubernetes resource configuration for deploying the said application and exposing it as a service.

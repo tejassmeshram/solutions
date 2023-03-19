@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tejas-ingress
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+spec:    
+  rules:
+  - http:
+      paths:
+      - path: /*
+        backend:
+          service:
+            name: tejas-service
+            port:
+              number: 8083
+      # - path: /v2
+      #   backend:
+      #     service:
+      #       name: some-service
+      #       port:
+      #         number: 8084

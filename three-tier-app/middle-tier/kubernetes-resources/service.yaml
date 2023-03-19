@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tejas-service
+  labels:
+    app: tejas-app-service
+    tier: data-processing
+spec:
+  selector:
+    app: tejas-app
+    tier: data-processing
+  type: ClusterIP
+  ports:
+  - port: 8083
+    target: 8098  
